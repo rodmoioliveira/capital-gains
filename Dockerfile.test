@@ -1,0 +1,14 @@
+FROM rust:1.84-slim AS build
+RUN apt update -y && apt install -y \
+  cmake \
+  g++ \
+  lib32z1 \
+  libsasl2-dev \
+  libssl-dev \
+  make \
+  perl \
+  pkg-config
+WORKDIR /rust-src
+COPY . /rust-src/
+STOPSIGNAL SIGINT
+ENTRYPOINT [ "cargo", "test" ]

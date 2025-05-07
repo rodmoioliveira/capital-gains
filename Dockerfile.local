@@ -1,0 +1,37 @@
+FROM rust:1.84-slim AS build
+RUN apt update -y && apt install -y \
+  cmake \
+  g++ \
+  lib32z1 \
+  libsasl2-dev \
+  libssl-dev \
+  make \
+  perl \
+  pkg-config
+WORKDIR /rust-src
+COPY . /rust-src/
+RUN cargo build --release
+RUN ["cp", "/rust-src/target/release/capital-gains", "/usr/local/bin/capital-gains"]
+
+FROM gcr.io/distroless/cc-debian12
+
+ARG BUILD_DATE
+ARG BUILD_NAME
+ARG BUILD_DESCRIPTION
+ARG BUILD_VCS_URL
+ARG BUILD_VCS_REF
+ARG BUILD_VERSION
+
+LABEL io.some.registry.build-date=$BUILD_DATE
+LABEL io.some.registry.name=$BUILD_NAME
+LABEL io.some.registry.description=$BUILD_DESCRIPTION
+LABEL io.some.registry.vcs-url=$BUILD_VCS_URL
+LABEL io.some.registry.vcs-ref=$BUILD_VCS_REF
+LABEL io.some.registry.version=$BUILD_VERSION
+LABEL io.some.registry.schema-version="1.0"
+LABEL io.some.registry.docker.cmd="docker run -i capital-gains:local --help"
+
+WORKDIR /app
+COPY --from=build /usr/local/bin/capital-gains /app/capital-gains
+STOPSIGNAL SIGINT
+ENTRYPOINT ["/app/capital-gains"]
