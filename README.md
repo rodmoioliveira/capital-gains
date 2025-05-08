@@ -154,13 +154,13 @@ Here are the performance results measured with
 
 | Command                             |        Mean [ms] | Min [ms] | Max [ms] |         Relative |
 | :---------------------------------- | ---------------: | -------: | -------: | ---------------: |
-| `capital-gains [ input_size=10^0 ]` |       14.5 ± 1.8 |     12.5 |     21.6 |             1.00 |
-| `capital-gains [ input_size=10^1 ]` |       14.8 ± 1.2 |     12.8 |     17.2 |      1.02 ± 0.15 |
-| `capital-gains [ input_size=10^2 ]` |       20.8 ± 2.6 |     15.3 |     26.9 |      1.43 ± 0.25 |
-| `capital-gains [ input_size=10^3 ]` |       55.1 ± 7.0 |     40.1 |     67.2 |      3.79 ± 0.67 |
-| `capital-gains [ input_size=10^4 ]` |     274.9 ± 24.7 |    236.3 |    307.7 |     18.91 ± 2.90 |
-| `capital-gains [ input_size=10^5 ]` |    2307.1 ± 42.1 |   2232.5 |   2377.6 |   158.69 ± 19.98 |
-| `capital-gains [ input_size=10^6 ]` | 32141.4 ± 8101.7 |  23654.8 |  42951.5 | 2210.87 ± 621.60 |
+| `capital-gains [ input_size=10^0 ]` |       15.1 ± 2.2 |     11.5 |     24.8 |      1.01 ± 0.18 |
+| `capital-gains [ input_size=10^1 ]` |       14.9 ± 1.5 |     12.1 |     19.7 |             1.00 |
+| `capital-gains [ input_size=10^2 ]` |       18.9 ± 2.2 |     15.5 |     25.5 |      1.26 ± 0.20 |
+| `capital-gains [ input_size=10^3 ]` |       52.6 ± 6.8 |     40.6 |     61.7 |      3.52 ± 0.58 |
+| `capital-gains [ input_size=10^4 ]` |     276.5 ± 16.1 |    243.1 |    294.9 |     18.53 ± 2.16 |
+| `capital-gains [ input_size=10^5 ]` |   2622.1 ± 193.7 |   2420.4 |   3020.5 |   175.75 ± 22.02 |
+| `capital-gains [ input_size=10^6 ]` | 35029.2 ± 8242.0 |  24562.3 |  44798.0 | 2347.88 ± 601.36 |
 
 The results above were measured on the following machine:
 
@@ -189,27 +189,27 @@ have to worry about the data presented in the still reachable section, [here's w
 ```
 make valgrind-test
 
-==1158913== Memcheck, a memory error detector
-==1158913== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1158913== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==1158913== Command: capital-gains
-==1158913==
-==1158913==
-==1158913== HEAP SUMMARY:
-==1158913==     in use at exit: 8,192 bytes in 1 blocks
-==1158913==   total heap usage: 47 allocs, 46 frees, 17,539 bytes allocated
-==1158913==
-==1158913== LEAK SUMMARY:
-==1158913==    definitely lost: 0 bytes in 0 blocks
-==1158913==    indirectly lost: 0 bytes in 0 blocks
-==1158913==      possibly lost: 0 bytes in 0 blocks
-==1158913==    still reachable: 8,192 bytes in 1 blocks
-==1158913==         suppressed: 0 bytes in 0 blocks
-==1158913== Reachable blocks (those to which a pointer was found) are not shown.
-==1158913== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==1158913==
-==1158913== For lists of detected and suppressed errors, rerun with: -s
-==1158913== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==499495== Memcheck, a memory error detector
+==499495== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==499495== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==499495== Command: capital-gains
+==499495==
+==499495==
+==499495== HEAP SUMMARY:
+==499495==     in use at exit: 8,192 bytes in 1 blocks
+==499495==   total heap usage: 47 allocs, 46 frees, 17,539 bytes allocated
+==499495==
+==499495== LEAK SUMMARY:
+==499495==    definitely lost: 0 bytes in 0 blocks
+==499495==    indirectly lost: 0 bytes in 0 blocks
+==499495==      possibly lost: 0 bytes in 0 blocks
+==499495==    still reachable: 8,192 bytes in 1 blocks
+==499495==         suppressed: 0 bytes in 0 blocks
+==499495== Reachable blocks (those to which a pointer was found) are not shown.
+==499495== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==499495==
+==499495== For lists of detected and suppressed errors, rerun with: -s
+==499495== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
 # Dependencies
