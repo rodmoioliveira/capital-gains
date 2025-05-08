@@ -42,7 +42,7 @@ bench() {
     --warmup 5 \
     --parameter-scan size 0 6 \
     -n 'capital-gains [ input_size=10^{size} ]' \
-    'for i in $(seq 1 $(echo "10 ^ {size}" | bc)); do echo src/data/input-1.json; done | xargs cat | ./target/release/capital-gains' \
+    'for i in $(seq 1 $(echo "10 ^ {size}" | bc)); do echo src/data/input-000001.json; done | xargs cat | ./target/release/capital-gains' \
     --export-markdown benches/results.md
 }
 

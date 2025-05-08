@@ -33,7 +33,7 @@ deps-validate() {
 }
 
 valgrind-test() {
-  bash -c "valgrind --leak-check=full <src/data/input-1.json capital-gains > /dev/null" |& tee "./tests/valgrind.txt"
+  bash -c "valgrind --leak-check=full <src/data/input-000001.json capital-gains > /dev/null" |& tee "./tests/valgrind.txt"
 }
 
 main() {
