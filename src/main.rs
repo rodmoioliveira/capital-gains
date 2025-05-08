@@ -122,100 +122,110 @@ pub mod finance {
         use crate::models::{Transaction, TransactionResult};
 
         #[test]
-        fn case_1() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-1.json"))?;
+        fn case_000001() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000001.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-1.json"))?;
+                serde_json::from_str(include_str!("data/expected-000001.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_2() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-2.json"))?;
+        fn case_000002() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000002.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-2.json"))?;
+                serde_json::from_str(include_str!("data/expected-000002.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_3() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-3.json"))?;
+        fn case_000003() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000003.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-3.json"))?;
+                serde_json::from_str(include_str!("data/expected-000003.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_4() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-4.json"))?;
+        fn case_000004() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000004.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-4.json"))?;
+                serde_json::from_str(include_str!("data/expected-000004.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_5() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-5.json"))?;
+        fn case_000005() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000005.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-5.json"))?;
+                serde_json::from_str(include_str!("data/expected-000005.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_6() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-6.json"))?;
+        fn case_000006() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000006.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-6.json"))?;
+                serde_json::from_str(include_str!("data/expected-000006.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_7() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-7.json"))?;
+        fn case_000007() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000007.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-7.json"))?;
+                serde_json::from_str(include_str!("data/expected-000007.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_8() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-8.json"))?;
+        fn case_000008() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000008.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-8.json"))?;
+                serde_json::from_str(include_str!("data/expected-000008.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_9() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-9.json"))?;
+        fn case_000009() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000009.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-9.json"))?;
+                serde_json::from_str(include_str!("data/expected-000009.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
         }
 
         #[test]
-        fn case_10() -> anyhow::Result<()> {
-            let input: Vec<Transaction> = serde_json::from_str(include_str!("data/input-10.json"))?;
+        fn case_000010() -> anyhow::Result<()> {
+            let input: Vec<Transaction> =
+                serde_json::from_str(include_str!("data/input-000010.json"))?;
             let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-10.json"))?;
+                serde_json::from_str(include_str!("data/expected-000010.json"))?;
             let result: Vec<TransactionResult> = finance::calculate_taxes(input);
             assert_eq!(expected, result);
             Ok(())
@@ -394,11 +404,11 @@ mod tests_cmd {
     fn single_file() {
         Command::new("cargo")
             .args(["run"])
-            .pipe_stdin(Path::new("src/data/input-1.json"))
+            .pipe_stdin(Path::new("src/data/input-000001.json"))
             .unwrap()
             .assert()
             .stdout(
-                predicate::path::eq_file(Path::new("src/data/expected-1.json"))
+                predicate::path::eq_file(Path::new("src/data/expected-000001.json"))
                     .utf8()
                     .unwrap(),
             );
@@ -408,14 +418,16 @@ mod tests_cmd {
     fn multiple_files() {
         let inputs = Command::new("cat")
             .args([
-                "src/data/input-1.json",
-                "src/data/input-2.json",
-                "src/data/input-3.json",
-                "src/data/input-4.json",
-                "src/data/input-5.json",
-                "src/data/input-6.json",
-                "src/data/input-7.json",
-                "src/data/input-8.json",
+                "src/data/input-000001.json",
+                "src/data/input-000002.json",
+                "src/data/input-000003.json",
+                "src/data/input-000004.json",
+                "src/data/input-000005.json",
+                "src/data/input-000006.json",
+                "src/data/input-000007.json",
+                "src/data/input-000008.json",
+                "src/data/input-000009.json",
+                "src/data/input-000010.json",
             ])
             .output()
             .unwrap();

@@ -6,3 +6,5 @@
 [{"tax":0.0},{"tax":0.0},{"tax":0.0},{"tax":0.0},{"tax":3000.0}]
 [{"tax":0.0},{"tax":0.0},{"tax":0.0},{"tax":0.0},{"tax":3000.0},{"tax":0.0},{"tax":0.0},{"tax":3700.0},{"tax":0.0}]
 [{"tax":0.0},{"tax":80000.0},{"tax":0.0},{"tax":60000.0}]
+[{"tax":0.0},{"error":"Can't sell more stocks than you have"}]
+[{"tax":0.0},{"error":"Can't sell more stocks than you have"},{"tax":10000.0}]
