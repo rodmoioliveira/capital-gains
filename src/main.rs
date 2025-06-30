@@ -387,7 +387,7 @@ fn main() -> anyhow::Result<()> {
         let result: Vec<TransactionResult> = calculate_taxes(i);
         let json = serde_json::to_string(&result)
             .map_err(|e| anyhow::anyhow!("[SerdeToStringError] {e}"))?;
-        writeln!(std::io::stdout(), "{}", json)
+        writeln!(std::io::stdout(), "{json}")
             .map_err(|e| anyhow::anyhow!("[WriteStdoutError] {e}"))?;
     }
     Ok(())
