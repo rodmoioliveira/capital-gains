@@ -26,6 +26,9 @@ comments-tidy: ## Tidy comments within code
 doc-changelog: ## Write CHANGELOG.md
 	@git cliff -o CHANGELOG.md
 
+doc-other-projects: ## Write OTHER_PROJECTS.md
+	@./dev/doc-other-projects.sh
+
 doc-readme: ## Write README.md
 	@./dev/doc-readme.sh
 
@@ -121,6 +124,7 @@ valgrind-test: rs-build ## Valgrind test for memory leaks
 .PHONY: bash-lint
 .PHONY: comments-tidy
 .PHONY: doc-changelog
+.PHONY: doc-other-projects
 .PHONY: doc-readme
 .PHONY: docker-build-local
 .PHONY: docker-build-test
