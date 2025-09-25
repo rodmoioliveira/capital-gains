@@ -1,6 +1,6 @@
 [package]
 name = "capital-gains"
-version = "0.4.0"
+version = "0.5.0"
 authors = ["Rodolfo Mói de Oliveira <rodmoi.oliveira@gmail.com>"]
 build = "build.rs"
 documentation = "https://github.com/rodmoioliveira/capital-gains"
