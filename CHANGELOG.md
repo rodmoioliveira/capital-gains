@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.5.0](https://github.com/rodmoioliveira/capital-gains/compare/0.4.0...0.5.0) - 2025-09-25
+
+[7ba283a](https://github.com/rodmoioliveira/capital-gains/commit/7ba283a142a52951cacdcff66e28770da760de15)...[2722b18](https://github.com/rodmoioliveira/capital-gains/commit/2722b1808e8f74b2177c31efb39fef036c97a4d2)
+
+### Bug Fixes
+
+- [dfe3b61](https://github.com/rodmoioliveira/capital-gains/commit/dfe3b616beab5dd20a5eb87001ad667b8933102f) - Simplify doc-other-projects script
+
+### Dependencies
+
+- [1f0f684](https://github.com/rodmoioliveira/capital-gains/commit/1f0f684b13f66ffbdcff7df4d3a6f44a6b69e0ca) - Bump clap from 4.5.45 to 4.5.46
+- [e56f213](https://github.com/rodmoioliveira/capital-gains/commit/e56f213e1fe52a5bb902e78f763573b817f50774) - Bump clap from 4.5.46 to 4.5.47
+- [0f095a7](https://github.com/rodmoioliveira/capital-gains/commit/0f095a7f6502a20ebd2c160c3f13d5450628e473) - Bump chrono from 0.4.41 to 0.4.42
+- [2aac868](https://github.com/rodmoioliveira/capital-gains/commit/2aac868722daf8f4e080792ea92231aa9ab78299) - Bump serde from 1.0.219 to 1.0.223
+- [d79d268](https://github.com/rodmoioliveira/capital-gains/commit/d79d268d7d441ef2feb50d6b7619e822d15c73ec) - Bump anyhow from 1.0.98 to 1.0.100
+- [44cc410](https://github.com/rodmoioliveira/capital-gains/commit/44cc4103a5136dd4f296566225a6f4f14ead354e) - Bump serde from 1.0.223 to 1.0.226
+
+### Features
+
+- [da22aee](https://github.com/rodmoioliveira/capital-gains/commit/da22aeed617018baa49f2dfdd1a693f18a898147) - Update deps
+
+### Releases
+
+- [ab367c2](https://github.com/rodmoioliveira/capital-gains/commit/ab367c2bd1f71a7ac5787f5a33b5dc9595e89897) - 0.4.0
+- [2722b18](https://github.com/rodmoioliveira/capital-gains/commit/2722b1808e8f74b2177c31efb39fef036c97a4d2) - Bump version
+
 ## [0.4.0](https://github.com/rodmoioliveira/capital-gains/compare/0.3.0...0.4.0) - 2025-08-29
 
 [1b89e6b](https://github.com/rodmoioliveira/capital-gains/commit/1b89e6b7bb110ffa9ca5d47b8979cff7b0ab94ff)...[7ba283a](https://github.com/rodmoioliveira/capital-gains/commit/7ba283a142a52951cacdcff66e28770da760de15)
