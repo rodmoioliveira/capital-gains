@@ -18,7 +18,7 @@ name = "capital-gains"
 path = "src/main.rs"
 
 [dependencies]
-anyhow = "1.0.101"
+anyhow = "1.0.102"
 clap = { version = "4.5.60", features = ["derive", "env", "cargo", "help"] }
 grep-cli = "0.1.12"
 libc = "0.2.182"
