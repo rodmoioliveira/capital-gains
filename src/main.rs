@@ -120,116 +120,40 @@ pub mod finance {
     pub mod tests {
         use crate::finance;
         use crate::models::{Transaction, TransactionResult};
+        use paste::paste;
+        use std::fs;
 
-        #[test]
-        fn case_000001() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000001.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000001.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
+        macro_rules! create_test {
+            ($name:tt) => {
+                paste! {
+                  #[test]
+                  fn [<case_$name>]() -> anyhow::Result<()> {
+                      let file_input = format!("src/data/input-{}.json", $name);
+                      let file_expected = format!("src/data/expected-{}.json", $name);
+
+                      let fi = fs::read_to_string(file_input)?;
+                      let fe = fs::read_to_string(file_expected)?;
+
+                      let input: Vec<Transaction> = serde_json::from_str(&fi)?;
+                      let expected: Vec<TransactionResult> = serde_json::from_str(&fe)?;
+                      let result: Vec<TransactionResult> = finance::calculate_taxes(input);
+                      assert_eq!(expected, result);
+                      Ok(())
+                  }
+                }
+            };
         }
 
-        #[test]
-        fn case_000002() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000002.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000002.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000003() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000003.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000003.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000004() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000004.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000004.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000005() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000005.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000005.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000006() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000006.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000006.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000007() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000007.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000007.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000008() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000008.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000008.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000009() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000009.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000009.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
-
-        #[test]
-        fn case_000010() -> anyhow::Result<()> {
-            let input: Vec<Transaction> =
-                serde_json::from_str(include_str!("data/input-000010.json"))?;
-            let expected: Vec<TransactionResult> =
-                serde_json::from_str(include_str!("data/expected-000010.json"))?;
-            let result: Vec<TransactionResult> = finance::calculate_taxes(input);
-            assert_eq!(expected, result);
-            Ok(())
-        }
+        create_test!("000001");
+        create_test!("000002");
+        create_test!("000003");
+        create_test!("000004");
+        create_test!("000005");
+        create_test!("000006");
+        create_test!("000007");
+        create_test!("000008");
+        create_test!("000009");
+        create_test!("000010");
     }
 }
 
