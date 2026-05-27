@@ -50,6 +50,7 @@ a few dependencies crates for this application, as you can see in the
 - [clap](https://crates.io/crates/clap) - A simple to use, efficient, and full-featured Command Line Argument Parser
 - [grep-cli](https://crates.io/crates/grep-cli) - Utilities for search oriented command line applications.
 - [libc](https://crates.io/crates/libc) - Raw FFI bindings to platform libraries like libc.
+- [paste](https://crates.io/crates/paste) - Macros for all your token pasting needs
 - [serde](https://crates.io/crates/serde) - A generic serialization/deserialization framework
 - [serde_json](https://crates.io/crates/serde_json) - A JSON serialization file format
 
