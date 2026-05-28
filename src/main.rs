@@ -121,21 +121,17 @@ pub mod finance {
         use crate::finance;
         use crate::models::{Transaction, TransactionResult};
         use paste::paste;
-        use std::fs;
 
         macro_rules! create_test {
             ($name:tt) => {
                 paste! {
                   #[test]
                   fn [<case_$name>]() -> anyhow::Result<()> {
-                      let file_input = format!("src/data/input-{}.json", $name);
-                      let file_expected = format!("src/data/expected-{}.json", $name);
+                      let file_input = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/data/input-", $name, ".json"));
+                      let file_expected = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/data/expected-", $name, ".json"));
 
-                      let fi = fs::read_to_string(file_input)?;
-                      let fe = fs::read_to_string(file_expected)?;
-
-                      let input: Vec<Transaction> = serde_json::from_str(&fi)?;
-                      let expected: Vec<TransactionResult> = serde_json::from_str(&fe)?;
+                      let input: Vec<Transaction> = serde_json::from_str(file_input)?;
+                      let expected: Vec<TransactionResult> = serde_json::from_str(file_expected)?;
                       let result: Vec<TransactionResult> = finance::calculate_taxes(input);
                       assert_eq!(expected, result);
                       Ok(())
