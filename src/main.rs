@@ -253,11 +253,10 @@ pub mod input {
         let mut input: Vec<Vec<Transaction>> = Vec::new();
         let stdin_handle = BufReader::new(stdin.lock());
         for line in stdin_handle.lines() {
-            let l = line.map_err(|e| anyhow::anyhow!("[InputGetLineError] {e}"))?;
+            let l = line?;
             let l_trimmed = l.trim();
             if !l_trimmed.is_empty() {
-                let transactions: Vec<Transaction> = serde_json::from_str(&l)
-                    .map_err(|e| anyhow::anyhow!("[SerdeToStringError] {e}"))?;
+                let transactions: Vec<Transaction> = serde_json::from_str(&l)?;
                 input.push(transactions);
             }
         }
@@ -299,9 +298,7 @@ fn main() -> anyhow::Result<()> {
     );
 
     if !input::is_valid(&args.transactions) {
-        Cli::command()
-            .print_help()
-            .map_err(|e| anyhow::anyhow!("[WriteStdoutError] {e}"))?;
+        Cli::command().print_help()?;
         std::process::exit(1);
     }
 
@@ -309,9 +306,8 @@ fn main() -> anyhow::Result<()> {
     let mut stdout_handle = BufWriter::new(std::io::stdout().lock());
     for i in inputs {
         let result: Vec<TransactionResult> = calculate_taxes(i);
-        let json = serde_json::to_string(&result)
-            .map_err(|e| anyhow::anyhow!("[SerdeToStringError] {e}"))?;
-        writeln!(stdout_handle, "{json}").map_err(|e| anyhow::anyhow!("[WriteStdoutError] {e}"))?;
+        let json = serde_json::to_string(&result)?;
+        writeln!(stdout_handle, "{json}")?;
     }
     stdout_handle.flush()?;
     Ok(())
