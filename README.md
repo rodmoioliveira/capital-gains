@@ -154,15 +154,15 @@ To test the application, you have two options:
 Here are the performance results measured with
 [hyperfine](https://github.com/sharkdp/hyperfine) according to input size:
 
-| Command                             |        Mean [ms] | Min [ms] | Max [ms] |         Relative |
-| :---------------------------------- | ---------------: | -------: | -------: | ---------------: |
-| `capital-gains [ input_size=10^0 ]` |       15.1 ± 2.2 |     11.5 |     24.8 |      1.01 ± 0.18 |
-| `capital-gains [ input_size=10^1 ]` |       14.9 ± 1.5 |     12.1 |     19.7 |             1.00 |
-| `capital-gains [ input_size=10^2 ]` |       18.9 ± 2.2 |     15.5 |     25.5 |      1.26 ± 0.20 |
-| `capital-gains [ input_size=10^3 ]` |       52.6 ± 6.8 |     40.6 |     61.7 |      3.52 ± 0.58 |
-| `capital-gains [ input_size=10^4 ]` |     276.5 ± 16.1 |    243.1 |    294.9 |     18.53 ± 2.16 |
-| `capital-gains [ input_size=10^5 ]` |   2622.1 ± 193.7 |   2420.4 |   3020.5 |   175.75 ± 22.02 |
-| `capital-gains [ input_size=10^6 ]` | 35029.2 ± 8242.0 |  24562.3 |  44798.0 | 2347.88 ± 601.36 |
+| Command                             |      Mean [ms] | Min [ms] | Max [ms] |       Relative |
+| :---------------------------------- | -------------: | -------: | -------: | -------------: |
+| `capital-gains [ input_size=10^0 ]` |     31.6 ± 2.7 |     28.7 |     42.2 |           1.00 |
+| `capital-gains [ input_size=10^1 ]` |     32.4 ± 2.6 |     29.3 |     40.3 |    1.02 ± 0.12 |
+| `capital-gains [ input_size=10^2 ]` |    41.4 ± 20.0 |     25.5 |     90.8 |    1.31 ± 0.64 |
+| `capital-gains [ input_size=10^3 ]` |     41.5 ± 2.3 |     37.6 |     45.6 |    1.31 ± 0.13 |
+| `capital-gains [ input_size=10^4 ]` |   107.4 ± 11.1 |     99.5 |    142.5 |    3.39 ± 0.46 |
+| `capital-gains [ input_size=10^5 ]` |   727.3 ± 16.3 |    707.5 |    753.2 |   22.99 ± 2.04 |
+| `capital-gains [ input_size=10^6 ]` | 9084.5 ± 994.8 |   7243.4 |   9991.8 | 287.09 ± 39.95 |
 
 The results above were measured on the following machine:
 
