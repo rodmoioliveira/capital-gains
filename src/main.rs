@@ -232,6 +232,7 @@ pub mod cli {
 
 pub mod input {
     use crate::models::Transaction;
+    use std::io::BufReader;
 
     pub fn is_positional(input: &str) -> bool {
         input != "-"
@@ -250,7 +251,8 @@ pub mod input {
 
         let stdin = std::io::stdin();
         let mut input: Vec<Vec<Transaction>> = Vec::new();
-        for line in stdin.lock().lines() {
+        let stdin_handle = BufReader::new(stdin.lock());
+        for line in stdin_handle.lines() {
             let l = line.map_err(|e| anyhow::anyhow!("[InputGetLineError] {e}"))?;
             let l_trimmed = l.trim();
             if !l_trimmed.is_empty() {
@@ -284,6 +286,7 @@ fn main() -> anyhow::Result<()> {
     use crate::finance::calculate_taxes;
     use crate::models::{Transaction, TransactionResult};
     use clap::{CommandFactory, Parser};
+    use std::io::BufWriter;
     use std::io::Write;
 
     reset_sigpipe();
@@ -303,13 +306,14 @@ fn main() -> anyhow::Result<()> {
     }
 
     let inputs: Vec<Vec<Transaction>> = input::parse()?;
+    let mut stdout_handle = BufWriter::new(std::io::stdout().lock());
     for i in inputs {
         let result: Vec<TransactionResult> = calculate_taxes(i);
         let json = serde_json::to_string(&result)
             .map_err(|e| anyhow::anyhow!("[SerdeToStringError] {e}"))?;
-        writeln!(std::io::stdout(), "{json}")
-            .map_err(|e| anyhow::anyhow!("[WriteStdoutError] {e}"))?;
+        writeln!(stdout_handle, "{json}").map_err(|e| anyhow::anyhow!("[WriteStdoutError] {e}"))?;
     }
+    stdout_handle.flush()?;
     Ok(())
 }
 

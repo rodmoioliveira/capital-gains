@@ -156,13 +156,13 @@ Here are the performance results measured with
 
 | Command                             |      Mean [ms] | Min [ms] | Max [ms] |       Relative |
 | :---------------------------------- | -------------: | -------: | -------: | -------------: |
-| `capital-gains [ input_size=10^0 ]` |     31.6 ± 2.7 |     28.7 |     42.2 |           1.00 |
-| `capital-gains [ input_size=10^1 ]` |     32.4 ± 2.6 |     29.3 |     40.3 |    1.02 ± 0.12 |
-| `capital-gains [ input_size=10^2 ]` |    41.4 ± 20.0 |     25.5 |     90.8 |    1.31 ± 0.64 |
-| `capital-gains [ input_size=10^3 ]` |     41.5 ± 2.3 |     37.6 |     45.6 |    1.31 ± 0.13 |
-| `capital-gains [ input_size=10^4 ]` |   107.4 ± 11.1 |     99.5 |    142.5 |    3.39 ± 0.46 |
-| `capital-gains [ input_size=10^5 ]` |   727.3 ± 16.3 |    707.5 |    753.2 |   22.99 ± 2.04 |
-| `capital-gains [ input_size=10^6 ]` | 9084.5 ± 994.8 |   7243.4 |   9991.8 | 287.09 ± 39.95 |
+| `capital-gains [ input_size=10^0 ]` |     32.4 ± 2.1 |     28.5 |     37.0 |    1.07 ± 0.09 |
+| `capital-gains [ input_size=10^1 ]` |     30.2 ± 1.6 |     27.5 |     32.8 |           1.00 |
+| `capital-gains [ input_size=10^2 ]` |     32.6 ± 1.4 |     30.1 |     35.6 |    1.08 ± 0.07 |
+| `capital-gains [ input_size=10^3 ]` |     42.5 ± 3.2 |     36.7 |     49.1 |    1.41 ± 0.13 |
+| `capital-gains [ input_size=10^4 ]` |    117.6 ± 9.6 |    105.6 |    143.7 |    3.89 ± 0.38 |
+| `capital-gains [ input_size=10^5 ]` |   849.7 ± 34.2 |    799.4 |    914.1 |   28.13 ± 1.84 |
+| `capital-gains [ input_size=10^6 ]` | 9779.9 ± 257.8 |   9396.0 |  10139.4 | 323.76 ± 18.81 |
 
 The results above were measured on the following machine:
 

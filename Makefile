@@ -54,7 +54,7 @@ rs-audit-fix: ## Update Cargo.toml to fix vulnerable dependency requirement
 	@cargo audit fix
 
 rs-bench: rs-build ## Benchmark binary
-	@sudo ./dev/rs-bench.sh
+	@./dev/rs-bench.sh
 
 rs-build: ## Build binary
 	@cargo build --release --locked --frozen --bins
